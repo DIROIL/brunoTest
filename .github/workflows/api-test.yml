@@ -23,7 +23,7 @@ jobs:
       run: npm install -g @usebruno/cli
     
     - name: Run Bruno Tests
-      run: bru run --env ci --reporter-html results.html testbruno.btu
+      run: bru run --env ci --reporter-html results.html testbruno.bru
     
     - name: Upload Test Results
       uses: actions/upload-artifact@v4
