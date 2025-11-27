@@ -4,12 +4,27 @@ meta {
   seq: 1
 }
 
-get {
-  url: https://echo.userbruno.com
+post {
+  url: https://echo.usebruno.com
   body: none
   auth: inherit
 }
 
+assert {
+  res.status: eq 200
+}
+
+tests {
+  test("should return 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+   
+  test("should return json", function () {
+    expect(res.getBody()).to.equal("");
+  });
+}
+
 settings {
   encodeUrl: true
+  timeout: 0
 }
